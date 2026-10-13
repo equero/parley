@@ -1,0 +1,19 @@
+# parley
+
+> A small crew of native Web Components. No framework, no runtime, no build step on the consumer side — custom elements that work wherever HTML does. Published as `@equerodev/parley` on npm.
+
+## Usage
+
+```js
+import "@equerodev/parley";
+```
+
+Then drop the tags into your markup.
+
+## Components
+
+- [site-footer](docs/site-footer.md): Site footer with an optional name link, a copyright template, a tagline slot that hides when empty, CSS parts and custom properties for theming. Ships no text of its own.
+
+## Reference
+
+- [custom-elements.json](custom-elements.json): Custom Elements Manifest — machine-readable metadata (attributes, slots, CSS custom properties) for every component.

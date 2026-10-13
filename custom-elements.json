@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/footer/site-footer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A site footer with an optional name link, a copyright line and an optional\ntagline. It ships no text of its own: everything it shows comes from its\nattributes and slots.",
+          "name": "SiteFooter",
+          "cssProperties": [
+            {
+              "description": "Font family.",
+              "name": "--font",
+              "default": "inherit"
+            },
+            {
+              "description": "Name link color.",
+              "name": "--link",
+              "default": "inherit"
+            },
+            {
+              "description": "Name link color on hover.",
+              "name": "--link-hover",
+              "default": "var(--link)"
+            },
+            {
+              "description": "Box background on hover.",
+              "name": "--hover-background",
+              "default": "rgba(243, 244, 246, 0.05)"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "The `<footer>` element.",
+              "name": "footer"
+            },
+            {
+              "description": "The box that holds every line and highlights on hover.",
+              "name": "box"
+            },
+            {
+              "description": "The line with the name.",
+              "name": "name"
+            },
+            {
+              "description": "The copyright line.",
+              "name": "copyright"
+            },
+            {
+              "description": "The line that wraps the `tagline` slot.",
+              "name": "tagline"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Extra content after the tagline.",
+              "name": ""
+            },
+            {
+              "description": "A short line under the copyright. Hidden when empty.",
+              "name": "tagline"
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "` <style> :host { display: block; padding: 5rem 0 1rem; text-align: center; font-family: var(--font, inherit); font-size: 0.75rem; font-weight: 600; } [hidden] { display: none !important; } footer { display: flex; flex-direction: column; align-items: center; } .box { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.5rem 1rem; transition: background 0.3s, border-radius 0.3s; } .box:hover { border-radius: 0.5rem; background: var(--hover-background, rgba(243, 244, 246, 0.05)); } p { margin: 0; } a { color: var(--link, inherit); text-decoration: none; text-underline-offset: 2px; } a:hover { color: var(--link-hover, var(--link, inherit)); } .tagline { transition: opacity 0.3s; } @media (hover: hover) { :host([reveal=\"hover\"]) .tagline { opacity: 0; } :host([reveal=\"hover\"]) .box:hover .tagline { opacity: 1; } } </style> <footer part=\"footer\"> <div class=\"box\" part=\"box\"> <p part=\"name\" hidden></p> <p part=\"copyright\"></p> <p class=\"tagline\" part=\"tagline\" hidden><slot name=\"tagline\"></slot></p> <slot></slot> </div> </footer> `"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "description": "Name shown above the copyright line and inside it. Hidden when missing."
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Makes the name a link to this URL. Without it the name is plain text."
+            },
+            {
+              "name": "year",
+              "type": {
+                "text": "string"
+              },
+              "description": "Copyright year or range. Defaults to the current year."
+            },
+            {
+              "name": "copyright",
+              "type": {
+                "text": "string"
+              },
+              "description": "Copyright template with `{year}` and `{name}` placeholders. Defaults to `© {year} {name}`."
+            },
+            {
+              "type": {
+                "text": "\"hover\""
+              },
+              "description": "When `hover`, the tagline only shows while the footer is hovered (on devices that can hover).",
+              "name": "reveal"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/footer/site-footer.ts"
+          },
+          "tagName": "site-footer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SiteFooter",
+          "declaration": {
+            "name": "SiteFooter",
+            "module": "src/footer/site-footer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/element.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "BaseElement",
+          "default": "(globalThis.HTMLElement ?? class {})",
+          "description": "Base class for every parley component.\n\nOutside the browser (SSR, build steps, tests without a DOM) there is no\n`HTMLElement`, so a plain class stands in. Importing parley on the server\nno longer throws; the components simply register once the code runs in a\nbrowser."
+        },
+        {
+          "kind": "function",
+          "name": "define",
+          "return": {
+            "type": {
+              "text": "void"
+            }
+          },
+          "parameters": [
+            {
+              "name": "tag",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "element",
+              "type": {
+                "text": "CustomElementConstructor"
+              }
+            }
+          ],
+          "description": "Registers a custom element once. Safe to call on the server and when two\ncopies of parley end up on the same page."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BaseElement",
+          "declaration": {
+            "name": "BaseElement",
+            "module": "src/core/element.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "define",
+          "declaration": {
+            "name": "define",
+            "module": "src/core/element.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "tag",
+          "declaration": {
+            "name": "element",
+            "module": "src/core/element.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

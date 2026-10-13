@@ -8,7 +8,8 @@
     "rootDir": "src",
     "strict": true,
     "lib": ["ES2022", "DOM"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "customConditions": ["parley-source"]
   },
   "include": ["src"]
 }

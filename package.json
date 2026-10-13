@@ -1,38 +1,57 @@
 {
-  "name": "@habakukbeneke/site-footer",
-  "version": "0.1.0",
-  "description": "Reusable site footer as a native Web Component.",
-  "author": {
-    "name": "Enrique Quero Vilar",
-    "nickname": "Habakuk Beneke",
-    "e-mail": "habakukBeneke [at] proton [dot] me"
-  },
+  "name": "@equerodev/parley",
+  "version": "0.2.4",
+  "description": "A crew of reusable native Web Components.",
+  "author": "Enrique Quero <equero@pm.me> (https://equero.dev)",
   "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/equero/parley.git"
+  },
+  "bugs": {
+    "url": "https://github.com/equero/parley/issues"
+  },
+  "homepage": "https://github.com/equero/parley#readme",
   "type": "module",
-  "main": "./dist/site-footer.js",
-  "module": "./dist/site-footer.js",
-  "types": "./dist/site-footer.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/site-footer.d.ts",
-      "import": "./dist/site-footer.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "imports": {
+    "#*": {
+      "parley-source": "./src/*.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "files": [
+    "dist",
+    "custom-elements.json",
+    "llms.txt",
+    "docs"
+  ],
   "keywords": [
-    "web-component",
-    "custom-element",
-    "footer",
+    "web-components",
+    "custom-elements",
+    "component-library",
     "typescript"
   ],
   "scripts": {
     "build": "tsc",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "analyze": "cem analyze",
+    "prepublishOnly": "npm run analyze && npm run build"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.11.0",
     "typescript": "^5.8.3"
-  }
+  },
+  "customElements": "custom-elements.json"
 }

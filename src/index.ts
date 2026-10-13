@@ -1,1 +1,2 @@
-export * from "./footer/site-footer";
+export * from "#core/element";
+export * from "#footer/site-footer";

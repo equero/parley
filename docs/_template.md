@@ -20,6 +20,12 @@ One-line description of what the component is and does.
 | --- | --- |
 | _(default)_ |  |
 
+## CSS Parts
+
+| Part | Element |
+| --- | --- |
+|  |  |
+
 ## CSS Custom Properties
 
 | Property | Default | Description |

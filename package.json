@@ -22,6 +22,12 @@
       "import": "./dist/index.js"
     }
   },
+  "imports": {
+    "#*": {
+      "parley-source": "./src/*.ts",
+      "default": "./dist/*.js"
+    }
+  },
   "files": [
     "dist",
     "custom-elements.json",

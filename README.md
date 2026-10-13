@@ -16,6 +16,14 @@ import "@equerodev/parley";
 
 Then drop the tags in your markup. Right now there's one: `<site-footer>`.
 
+## Writing components
+
+- Ship no text of your own: names, links and sentences come from attributes and slots, so every site can use its own content and language.
+- Extend `BaseElement` and register with `define()` from `#core/element`, so importing parley on the server never throws.
+- Expose styling hooks: CSS custom properties for colors and fonts, and `part` names for anything else.
+- Import with `#` aliases (`#core/element`), never relative paths.
+- Document every component in `docs/`, starting from [`docs/_template.md`](./docs/_template.md), and list it in `llms.txt`.
+
 ## Releases
 
 Work happens on `develop`; `main` holds releases. Releases are done with [synkro](https://github.com/equero/synkro), then published to npm:

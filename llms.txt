@@ -12,7 +12,7 @@ Then drop the tags into your markup.
 
 ## Components
 
-- [site-footer](docs/site-footer.md): Configurable site footer with a name link, copyright-line presets, an optional custom copyright template, slotted content, a reveal-on-hover tagline, and CSS custom properties for theming.
+- [site-footer](docs/site-footer.md): Site footer with an optional name link, a copyright template, a tagline slot that hides when empty, CSS parts and custom properties for theming. Ships no text of its own.
 
 ## Reference
 

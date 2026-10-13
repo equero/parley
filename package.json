@@ -1,6 +1,6 @@
 {
   "name": "@equerodev/parley",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A crew of reusable native Web Components.",
   "author": "Enrique Quero <equero@pm.me> (https://equero.dev)",
   "license": "GPL-3.0-only",

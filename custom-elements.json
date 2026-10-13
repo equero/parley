@@ -4,6 +4,68 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/core/element.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "BaseElement",
+          "default": "(globalThis.HTMLElement ?? class {})",
+          "description": "Base class for every parley component.\n\nOutside the browser (SSR, build steps, tests without a DOM) there is no\n`HTMLElement`, so a plain class stands in. Importing parley on the server\nno longer throws; the components simply register once the code runs in a\nbrowser."
+        },
+        {
+          "kind": "function",
+          "name": "define",
+          "return": {
+            "type": {
+              "text": "void"
+            }
+          },
+          "parameters": [
+            {
+              "name": "tag",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "element",
+              "type": {
+                "text": "CustomElementConstructor"
+              }
+            }
+          ],
+          "description": "Registers a custom element once. Safe to call on the server and when two\ncopies of parley end up on the same page."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BaseElement",
+          "declaration": {
+            "name": "BaseElement",
+            "module": "src/core/element.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "define",
+          "declaration": {
+            "name": "define",
+            "module": "src/core/element.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "tag",
+          "declaration": {
+            "name": "element",
+            "module": "src/core/element.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/footer/site-footer.ts",
       "declarations": [
         {
@@ -133,68 +195,6 @@
           "declaration": {
             "name": "SiteFooter",
             "module": "src/footer/site-footer.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/core/element.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "BaseElement",
-          "default": "(globalThis.HTMLElement ?? class {})",
-          "description": "Base class for every parley component.\n\nOutside the browser (SSR, build steps, tests without a DOM) there is no\n`HTMLElement`, so a plain class stands in. Importing parley on the server\nno longer throws; the components simply register once the code runs in a\nbrowser."
-        },
-        {
-          "kind": "function",
-          "name": "define",
-          "return": {
-            "type": {
-              "text": "void"
-            }
-          },
-          "parameters": [
-            {
-              "name": "tag",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "element",
-              "type": {
-                "text": "CustomElementConstructor"
-              }
-            }
-          ],
-          "description": "Registers a custom element once. Safe to call on the server and when two\ncopies of parley end up on the same page."
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "BaseElement",
-          "declaration": {
-            "name": "BaseElement",
-            "module": "src/core/element.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "define",
-          "declaration": {
-            "name": "define",
-            "module": "src/core/element.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "tag",
-          "declaration": {
-            "name": "element",
-            "module": "src/core/element.ts"
           }
         }
       ]

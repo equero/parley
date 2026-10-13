@@ -1,11 +1,11 @@
 # parley
 
-> A small crew of native Web Components. No framework, no runtime, no build step on the consumer side — custom elements that work wherever HTML does. Published as `@hbeneke/parley` on npm.
+> A small crew of native Web Components. No framework, no runtime, no build step on the consumer side — custom elements that work wherever HTML does. Published as `@equerodev/parley` on npm.
 
 ## Usage
 
 ```js
-import "@hbeneke/parley";
+import "@equerodev/parley";
 ```
 
 Then drop the tags into your markup.

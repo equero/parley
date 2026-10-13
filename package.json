@@ -1,21 +1,17 @@
 {
-  "name": "@hbeneke/parley",
+  "name": "@equerodev/parley",
   "version": "0.2.3",
   "description": "A crew of reusable native Web Components.",
-  "author": {
-    "name": "Enrique Quero Vilar",
-    "nickname": "Habakuk Beneke",
-    "e-mail": "hbeneke [at] proton [dot] me"
-  },
+  "author": "Enrique Quero <equero@pm.me> (https://equero.dev)",
   "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hbeneke/parley.git"
+    "url": "git+https://github.com/equero/parley.git"
   },
   "bugs": {
-    "url": "https://github.com/hbeneke/parley/issues"
+    "url": "https://github.com/equero/parley/issues"
   },
-  "homepage": "https://github.com/hbeneke/parley#readme",
+  "homepage": "https://github.com/equero/parley#readme",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -42,10 +38,7 @@
     "build": "tsc",
     "dev": "tsc -w",
     "analyze": "cem analyze",
-    "prepublishOnly": "npm run analyze && npm run build",
-    "release:patch": "npm version patch -m \"chore(release): %s\" && git push --follow-tags && npm publish",
-    "release:minor": "npm version minor -m \"chore(release): %s\" && git push --follow-tags && npm publish",
-    "release:major": "npm version major -m \"chore(release): %s\" && git push --follow-tags && npm publish"
+    "prepublishOnly": "npm run analyze && npm run build"
   },
   "publishConfig": {
     "access": "public"

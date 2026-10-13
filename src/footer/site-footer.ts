@@ -45,7 +45,7 @@ template.innerHTML = `
 
   <footer>
     <div class="box">
-      <p><a id="name-link" href="https://www.hbeneke.dev"></a></p>
+      <p><a id="name-link" href="https://equero.dev"></a></p>
       <p id="copyright"></p>
       <p class="tagline">
         <slot name="tagline">Made with <span class="heart">❤️</span> from Spain.</slot>

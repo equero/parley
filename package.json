@@ -1,6 +1,6 @@
 {
   "name": "@equerodev/parley",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "A crew of reusable native Web Components.",
   "author": "Enrique Quero <equero@pm.me> (https://equero.dev)",
   "license": "GPL-3.0-only",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.11.0",
-    "typescript": "^5.8.3"
+    "typescript": "^7.0.2"
   },
   "customElements": "custom-elements.json"
 }
